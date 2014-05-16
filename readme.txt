@@ -82,8 +82,9 @@ Absolutely. Use your theme CSS file to customize the appearnce of the button. Th
 
 == Screenshots ==
 
-1. Basic output with the default CSS with the TwentyThirteen theme.
-2. This text is shown if you try to vote again.
+1. Using the Twenty Fourteen Theme.
+2. Using the Twenty Thirteen Theme.
+3. Using the Twenty Twelve Theme.
 
 == Changelog ==
 
