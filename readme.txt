@@ -1,6 +1,6 @@
 === Zip Attachments ===
 Contributors: quicoto
-Tags: attachments, download, zip, attachment
+Tags: attachments, download, zip, attachment, button
 Requires at least: 3.8
 Tested up to: 3.9.1
 Stable tag: 1.0
