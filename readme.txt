@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: attachments, download, zip, attachment, button
 Requires at least: 3.8
 Tested up to: 3.9.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -88,10 +88,16 @@ Absolutely. Use your theme CSS file to customize the appearnce of the button. Th
 
 == Changelog ==
 
+= 1.1 =
+* Sanatize the filename to avoid errors with some titles.
+
 = 1.0 =
 * Initial release, you'll love it.
 
 == Upgrade Notice ==
+
+= 1.1 =
+* Sanatize the filename to avoid errors with some titles.
 
 = 1.0 =
 * Initial release, you'll love it.
