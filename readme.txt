@@ -1,9 +1,9 @@
 === Zip Attachments ===
 Contributors: quicoto
 Tags: attachments, download, zip, attachment, button
-Requires at least: 3.8
-Tested up to: 3.9.1
-Stable tag: 1.1
+Requires at least: 3.9
+Tested up to: 4.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ Add a "Download" button to your posts, pages or custom post types. This button w
 
 == Description ==
 
-Simple and lightweight plugin to add a "Download" button to your posts, pages or custom post types. 
+Simple and lightweight plugin to add a "Download" button to your posts, pages or custom post types.
 
 This button will create a zip file of the post attachments on the fly and download it.
 
@@ -34,7 +34,7 @@ Feel free to post a request but let's keep it simple and light.
 Are you using the plugin? Do you like it? Do you hate it? Let me know!
 
 * Twitter: [@ricard_dev](http://twitter.com/ricard_dev)
-* Blog: [Rick's code](http://php.quicoto.com/) 
+* Blog: [Rick's code](http://php.quicoto.com/)
 
 == Installation ==
 
@@ -88,6 +88,9 @@ Absolutely. Use your theme CSS file to customize the appearnce of the button. Th
 
 == Changelog ==
 
+= 1.2 =
+* Fixed undefined variable for the plugin's path.
+
 = 1.1 =
 * Sanatize the filename to avoid errors with some titles.
 
@@ -95,6 +98,9 @@ Absolutely. Use your theme CSS file to customize the appearnce of the button. Th
 * Initial release, you'll love it.
 
 == Upgrade Notice ==
+
+= 1.2 =
+* Fixed undefined variable.
 
 = 1.1 =
 * Sanatize the filename to avoid errors with some titles.

@@ -4,7 +4,7 @@ Plugin Name: Zip Attachments
 Plugin URI: http://wordpress.org/plugins/zip-attachments/
 Description: Add a button to create a zip with the post/page file attachments.
 Author: Ricard Torres
-Version: 1.1
+Version: 1.2
 Author URI: http://php.quicoto.com/
 */
 
@@ -24,7 +24,7 @@ define('zip_attachments_path', WP_PLUGIN_DIR."/".dirname( plugin_basename( __FIL
 
 function za_plugin_scripts() {
 
-	wp_enqueue_script( 'za-general', zip_attachments_url . '/js/general.js', array(), '1.0.2', true );	
+	wp_enqueue_script( 'za-general', zip_attachments_url . '/js/general.js', array(), '1.0.2', true );
 	wp_localize_script( 'za-general', 'za_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 }
 
@@ -40,11 +40,11 @@ function za_create_zip_callback(){
 
 	$filename = get_the_title($postId);
 
-	$args = array( 
+	$args = array(
 		'post_type' => 'attachment',
 		'posts_per_page' => -1,
 		'post_status' =>'any',
-		'post_parent' => $postId ); 	
+		'post_parent' => $postId );
 
 	// Prepare File
 	$file = tempnam("tmp", "zip");
@@ -58,15 +58,15 @@ function za_create_zip_callback(){
 			// Get the file name
 			$name = explode('/', get_attached_file($attachment->ID) );
 			$name = $name[sizeof($name) - 1];
-			$zip->addFile(get_attached_file($attachment->ID), $name);			
+			$zip->addFile(get_attached_file($attachment->ID), $name);
 		}
-	}	
+	}
 
 	//Close the file
 	$zip->close();
 
 	// We have to return an actual URL, that URL will set the headers to force the download
-	echo plugins_url($file_path, __FILE__)."/download.php?za_filename=".sanitize_title($filename)."&za_file=".$file;
+	echo zip_attachments_url."/download.php?za_filename=".sanitize_title($filename)."&za_file=".$file;
 
 	die();
 }
@@ -80,9 +80,9 @@ add_action( 'wp_ajax_nopriv_za_create_zip_file', 'za_create_zip_callback' );
 
 function za_show_button($text = 'Download Attachments')
 {
-    
+
 	return '<button class="za_download_button" onclick="za_create_zip(\''. get_the_ID() .'\')">'. sanitize_text_field($text) . '</button>';
-    
+
 }
 
 
@@ -91,15 +91,15 @@ function za_show_button($text = 'Download Attachments')
 /*-----------------------------------------------------------------------------------*/
 
 function za_show_download_button_callback( $atts ) {
-	
+
 	// Parameters accepted
-	
+
 	extract( shortcode_atts( array(
-		'text' => 'Download Attachments'			
+		'text' => 'Download Attachments'
 	), $atts ) );
 
-	
-			
+
+
 	return za_show_button($text);
 }
 
