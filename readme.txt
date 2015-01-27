@@ -1,9 +1,9 @@
 === Zip Attachments ===
 Contributors: quicoto
 Tags: attachments, download, zip, attachment, button
-Requires at least: 3.9
+Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,7 @@ The output is very basic, no images, no fonts, no CSS. Just a simple button elem
 *   No output by default (check the Installation tab).
 *   Easy to customizable with CSS.
 *   Shortcode available.
+* 	Download counter stored per post.
 *	You chose the output text so no translation needed.
 *   Works with posts, pages and custom post types.
 
@@ -67,6 +68,25 @@ Finally you can use the shortcode inside your post content like so:
 
 As you can see you can use your own text, the default value is "Download Attachments".
 
+= Download Counter =
+
+Each method has a download counter, you need o add additional parameters:
+
+A)
+
+`function za_button_print($content)
+{
+	return $content.za_show_button('Download', 'true', '(% times)');
+}
+add_filter('the_content', 'za_button_print');`
+
+
+B) `<?=function_exists('za_show_button') ? za_show_button("Download", "true", "(% times)") : ''?>`
+
+C) `[za_show_download_button text="Download the file" counter="true" counter_format="(% times)"]`
+
+NOTE: the default counter format is `(%)`, where `%` is actual number. The plugin will automatically replace this caracter.
+
 == Frequently Asked Questions ==
 
 = I activated the plugin and I don't see the button =
@@ -88,6 +108,9 @@ Absolutely. Use your theme CSS file to customize the appearnce of the button. Th
 
 == Changelog ==
 
+= 1.3 =
+* Add a download counter.
+
 = 1.2 =
 * Fixed undefined variable for the plugin's path.
 
@@ -98,6 +121,9 @@ Absolutely. Use your theme CSS file to customize the appearnce of the button. Th
 * Initial release, you'll love it.
 
 == Upgrade Notice ==
+
+= 1.3 =
+* Add a download counter (check out the Installation instructions).
 
 = 1.2 =
 * Fixed undefined variable.
