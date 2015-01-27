@@ -70,7 +70,7 @@ As you can see you can use your own text, the default value is "Download Attachm
 
 = Download Counter =
 
-Each method has a download counter, you need o add additional parameters:
+Each method has a download counter, you need to add additional parameters:
 
 A)
 
@@ -80,12 +80,15 @@ A)
 }
 add_filter('the_content', 'za_button_print');`
 
+B) 
 
-B) `<?=function_exists('za_show_button') ? za_show_button("Download", "true", "(% times)") : ''?>`
+`<?=function_exists('za_show_button') ? za_show_button("Download", "true", "(% times)") : ''?>`
 
-C) `[za_show_download_button text="Download the file" counter="true" counter_format="(% times)"]`
+C) 
 
-NOTE: the default counter format is `(%)`, where `%` is actual number. The plugin will automatically replace this caracter.
+`[za_show_download_button text="Download the file" counter="true" counter_format="(% times)"]`
+
+NOTE: the default counter format is `(%)`, where `%` is actual number. The plugin will automatically replace this character with the download count.
 
 == Frequently Asked Questions ==
 
