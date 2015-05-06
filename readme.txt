@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: attachments, download, zip, attachment, button
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,11 +80,11 @@ A)
 }
 add_filter('the_content', 'za_button_print');`
 
-B) 
+B)
 
 `<?=function_exists('za_show_button') ? za_show_button("Download", "true", "(% times)") : ''?>`
 
-C) 
+C)
 
 `[za_show_download_button text="Download the file" counter="true" counter_format="(% times)"]`
 
@@ -111,6 +111,9 @@ Absolutely. Use your theme CSS file to customize the appearnce of the button. Th
 
 == Changelog ==
 
+= 1.4 =
+* Code improvement to match WordPress best practices.
+
 = 1.3 =
 * Add a download counter.
 
@@ -124,6 +127,9 @@ Absolutely. Use your theme CSS file to customize the appearnce of the button. Th
 * Initial release, you'll love it.
 
 == Upgrade Notice ==
+
+= 1.4 =
+* Code improvement to match WordPress best practices.
 
 = 1.3 =
 * Add a download counter (check out the Installation instructions).
