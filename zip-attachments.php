@@ -4,7 +4,7 @@ Plugin Name: Zip Attachments
 Plugin URI: http://wordpress.org/plugins/zip-attachments/
 Description: Add a button to create a zip with the post/page file attachments.
 Author: Ricard Torres
-Version: 1.4
+Version: 1.5
 Author URI: http://php.quicoto.com/
 */
 
@@ -38,7 +38,7 @@ function za_create_zip_callback(){
 
 	$postId = intval(sanitize_text_field($_POST['postId']));
 
-	$filename = get_the_title($postId);
+	$pretty_filename = get_the_title($postId);
 
 	$args = array(
 		'post_type' => 'attachment',
@@ -47,7 +47,7 @@ function za_create_zip_callback(){
 		'post_parent' => $postId );
 
 	// Prepare File
-	$file = tempnam("tmp", "zip");
+	$file = tempnam(zip_attachments_path, "zip");
 	$zip = new ZipArchive();
 	$zip->open($file, ZipArchive::OVERWRITE);
 
@@ -61,6 +61,11 @@ function za_create_zip_callback(){
 			$zip->addFile(get_attached_file($attachment->ID), $name);
 		}
 	}
+
+	// Store the filename before closing the file
+
+	$filename_array = explode('/', $zip->filename);
+	$filename = $filename_array[sizeof($filename_array) - 1];
 
 	//Close the file
 	$zip->close();
@@ -80,7 +85,7 @@ function za_create_zip_callback(){
 		update_post_meta($postId, $meta_name, $za_download_count);
 
 	// We have to return an actual URL, that URL will set the headers to force the download
-	echo zip_attachments_url."/download.php?za_filename=".sanitize_title($filename)."&za_file=".$file;
+	echo zip_attachments_url."/download.php?za_pretty_filename=".sanitize_file_name($pretty_filename)."&za_real_filename=".$filename;
 
 	die();
 }

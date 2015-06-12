@@ -1,9 +1,9 @@
 === Zip Attachments ===
 Contributors: quicoto
 Tags: attachments, download, zip, attachment, button
-Requires at least: 4.0
-Tested up to: 4.1
-Stable tag: 1.4
+Requires at least: 4.1
+Tested up to: 4.3
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,9 @@ Absolutely. Use your theme CSS file to customize the appearnce of the button. Th
 
 == Changelog ==
 
+= 1.5 =
+* ATTENTION the plugin might not work! I've tried to fix a vulnerability. Now the temporal zip files are generated in the same folder of the plugin. There might be permission issues. If you encounter any problem, post in the forum: https://wordpress.org/support/plugin/zip-attachments
+
 = 1.4 =
 * Code improvement to match WordPress best practices.
 
@@ -127,6 +130,9 @@ Absolutely. Use your theme CSS file to customize the appearnce of the button. Th
 * Initial release, you'll love it.
 
 == Upgrade Notice ==
+
+= 1.5 =
+* ATTENTION the plugin might not work! I've tried to fix a vulnerability. Now the temporal zip files are generated in the same folder of the plugin. There might be permission issues. If you encounter any problem, post in the forum: https://wordpress.org/support/plugin/zip-attachments
 
 = 1.4 =
 * Code improvement to match WordPress best practices.
