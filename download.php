@@ -16,7 +16,8 @@ if(isset($_REQUEST['za_pretty_filename']) && !empty($_REQUEST['za_real_filename'
     $pretty_filename = sanitize_file_name($_GET['za_pretty_filename']);
     $real_filename = sanitize_file_name($_GET['za_real_filename']);
 
-    $file = zip_attachments_path . "/" .$real_filename;
+    $upload_dir = wp_upload_dir();
+    $file = $upload_dir['path'] . "/" .$real_filename;
 
     header('Content-Type: application/zip');
     header('Content-Length: ' . filesize($file));

@@ -4,7 +4,7 @@ Plugin Name: Zip Attachments
 Plugin URI: http://wordpress.org/plugins/zip-attachments/
 Description: Add a button to create a zip with the post/page file attachments.
 Author: Ricard Torres
-Version: 1.5
+Version: 1.5.1
 Author URI: http://php.quicoto.com/
 */
 
@@ -47,7 +47,8 @@ function za_create_zip_callback(){
 		'post_parent' => $postId );
 
 	// Prepare File
-	$file = tempnam(zip_attachments_path, "zip");
+	$upload_dir = wp_upload_dir();
+	$file = tempnam($upload_dir['path'], "zip");
 	$zip = new ZipArchive();
 	$zip->open($file, ZipArchive::OVERWRITE);
 
