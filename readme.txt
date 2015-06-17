@@ -26,6 +26,12 @@ The output is very basic, no images, no fonts, no CSS. Just a simple button elem
 *	You chose the output text so no translation needed.
 *   Works with posts, pages and custom post types.
 
+= Known issues =
+
+*	If a download is cancelled, the file will not be deleted from the /wp-content/uploads folder.
+
+Patches are welcome!
+
 = Requests =
 
 Feel free to post a request but let's keep it simple and light.
